@@ -29,7 +29,7 @@ window.location.href="/ru/"
 <link rel="icon" href="/qicon.svg" sizes="any" type="image/svg+xml" id="light-scheme-icon">
 <link rel="icon" href="/qicondark.svg" sizes="any" type="image/svg+xml" id="dark-scheme-icon">
 <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1">
-<link rel="stylesheet" href="/app.css?v=<?=filemtime('app.css')?>"> 
+<link rel="stylesheet" href="/app.css"> 
 <title>Vladislav Gubarev | web developer, designer</title>
 <meta name="theme-color" content="#0278ff">
 <link rel="alternate" hreflang="ru" href="https://gubarev.site/ru/">
