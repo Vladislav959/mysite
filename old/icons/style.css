@@ -1,0 +1,156 @@
+html{
+scroll-behavior: smooth;
+}
+.order{
+background-color:#425df5;
+padding-left:15px;
+padding-right:15px;
+font-size:1.4em;
+border:none;
+padding-top:10px;
+padding-bottom:10px;
+color:white;
+transition:background-color .2s ease-in;
+}
+.hello{
+float:left;
+margin-top:4vh;
+margin-bottom:80px;
+}
+.hi_h1{
+font-family:'Geometos';
+font-size:3.7em;
+}
+
+.hfone{
+width:90vw;
+margin-left:3.5vw;
+margin-top:3vh;
+}
+.ne{
+color:#425df5!important;
+}
+.wai_h h2{
+font-family:'Geometos';
+}
+.wai img{
+width:260px;
+height:260px;
+position:relative;
+}
+.wai img:focus, .wai img:hover{
+z-index:3;
+}
+.wai_p{
+position:relative;
+top:-120px;
+background-color:#425df5;
+float:right;
+right:10px;
+width:60vw;
+padding:3%;
+padding-bottom:none;
+color:white;
+z-index:2;
+}
+.wai_p::selection{
+background-color:white;
+color:#425df5;
+}
+.wma{
+font-family:'Geometos';
+padding-top:20px;
+}
+.wma_ul li{
+font-size:2em;
+line-height:1.5;
+}
+.wma_ul{
+list-style:none;
+}
+.wma_ul li:before{
+content: "\2022";  
+  color: black;
+  display: inline-block; 
+  width: 1em;
+  margin-left: -1em; 
+}
+.wma_ul{
+margin-bottom:60px;
+}
+.ex_h{
+font-family:'Geometos';
+}
+.ex_cart{
+background-color:#ededed;
+border-radius:10px;
+width:37vw;
+padding:3%;
+padding-top:15px;
+padding-bottom:1%;
+margin-top:20px;
+}
+.ex_cart img{
+width:40px;
+height:40px;
+}
+.ex{
+width:90vw;
+}
+.ex_cart_id{
+width:40px;
+height:40px;
+margin:auto;
+margin-bottom:20px;
+}
+.ex a{
+text-decoration:none;
+color:black;
+text-align:center;
+}
+.fll{
+float:left;
+}
+.flr{
+float:right;
+}
+.ex_cart:focus{
+background-color:#e6e6e6;
+}
+        .form-wrap{ margin-left:-4.5vw;width: 91vw; background-color:#425df5; padding: 20px;
+padding-bottom:40px;margin-top:400px;
+margin-bottom:80px;}
+       .form-wrap h1{text-align: center; color: #fff; font-family:'Geometos';margin-bottom: 50px;font-size:3.6em;}
+        textarea{width:100%;background-color:transparent;color:white;border-radius:5px;padding: 9px 15px; box-sizing: border-box;border:1px solid #fff;margin-bottom:20px;font-family:'Nexa';font-size:16px;}
+        input{width: 100%; background-color: transparent; border: 1px solid #fff; border-radius: 5px; padding: 7px 15px; box-sizing: border-box; margin-bottom: 20px; font-size: 16px; color: #fff;font-family:'Nexa';}
+        
+        input[type="submit"]{ background: #fff; border: 0; cursor: pointer; color: #425df5;font-family:'Nexa';}
+        input[type="submit"]:focus{ background: #425df5; transition: .6s;color:#fff;border:2px solid white;}
+        ::placeholder{color: #fff;}
+    .up{
+float:right;
+}
+.httl{
+font-family:'Bebas';
+font-weight:bold;
+}
+.httd{
+font-family:'Nexa';
+}
+body{
+font-family:'Nexa';
+}
+.wma_ul li:last-of-type{
+background-color:black;color:white;width:155px;padding-left:4px;padding-right:4px
+}
+@media (prefers-color-scheme: dark) {
+.ne{
+color:#4663f2!important;
+}
+.wma_ul li:before{
+color:white;
+}
+.wma_ul li:last-of-type{
+background-color:transparent!important;
+}
+}

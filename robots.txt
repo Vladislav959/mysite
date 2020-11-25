@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /404.php
+Disallow: /404ru.php
+Disallow: /old/
+Disallow: /old2/
+Disallow: /projects/
+Disallow: /cobalt/
+
+Sitemap: https://gubarev.site/sitemap-prod.xml

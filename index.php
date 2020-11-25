@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="utf-8">
+<script>
+if (navigator.language = 'ru-RU'){
+window.location.href="/ru/"
+}
+</script>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="monetization" content="$ilp.uphold.com/yGBqqJBz9iQd">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+<meta name="description" content="This is the website of Vladislav Gubarev, web developer and designer.">
+<meta name="author" content="Vladislav Gubarev">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vladislav Gubarev | web developer, designer">
+<meta property="og:site_name" content="gubarev.site">
+<meta property="og:url" content="http://gubarev.site/">
+<meta property="og:description" content="This is the website of Vladislav Gubarev, web developer and designer.">
+<meta property="og:image" content="https://gubarev.site/avatar.jpg">
+<meta property="og:locale" content="en">
+<meta property="og:locale:alternate" content="ru">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://gubarev.site/">
+<meta property="twitter:title" content="Vladislav Gubarev | web developer, designer">
+<meta property="twitter:description" content="This is the website of Vladislav Gubarev, web developer and designer.">
+<meta property="twitter:image" content="https://gubarev.site/avatar.jpg">
+<meta name="keywords" content="html5,html,javascript,css,css3,make site,order site,site maker,web developer,web,vladislav gubarev,vladislav gubarev site, vladislav gubarev developer, gubarev vladislav site, gubarev vladislav site,web development,gubarev vladislav developer, vladislav gubarev developer, vladislav gubarev web developer,gubarev vladislav web developer, web programming, site 2020, programming 2020, website,order landing,landing,web development,web design, order professional website">
+<link rel="icon" href="/qicon.svg" sizes="any" type="image/svg+xml" id="light-scheme-icon">
+<link rel="icon" href="/qicondark.svg" sizes="any" type="image/svg+xml" id="dark-scheme-icon">
+<meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1">
+<link rel="stylesheet" href="/app.css?v=<?=filemtime('app.css')?>"> 
+<title>Vladislav Gubarev | web developer, designer</title>
+<meta name="theme-color" content="#0278ff">
+<link rel="alternate" hreflang="ru" href="https://gubarev.site/ru/">
+<script data-name="BMC-Widget" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="vladoss" data-description="Support my projects:" data-message="You can buy me a coffee!" data-color="#0278ff" data-position="" data-x_margin="18" data-y_margin="18"></script>
+<style>
+.prof_p p{
+   line-height:1.2;
+}
+.avatar img{
+width:180px;
+height:180px;
+border:4px solid #0278ff;
+border-radius:50%;object-fit: cover;
+}
+.avatar{
+object-fit: cover;
+width:180px;
+height:180px;
+margin:auto;
+margin-top:14vh;
+}
+.ex_h{
+font-family:'Atyp';
+margin-top:7vh;
+text-align:center;
+font-size:2.4em;
+transform:translateY(20px);
+}
+.art_h{
+font-family:'Atyp';
+margin-top:7vh;
+text-align:center;
+font-size:2.4em;
+transform:translateY(10px);
+}
+.cart{
+padding:13px;
+margin: 0 15px;
+margin-top:30px;
+transition:all .2s ease-in;
+}
+.cartf{
+margin-top:10px;
+}
+.lp{
+border:3px solid #02a66f;
+}
+.fasco{
+border:3px solid #58dc96;
+}
+.lp:hover, .lp:focus{
+background:#02a66f!important;
+transform:translateY(-4px);
+}
+.fasco:hover, .fasco:focus{
+background:#58dc96!important;
+transform:translateY(-4px);
+
+}
+.lp:hover *, .lp:focus *, .fasco:hover *, .fasco:focus *{
+color:white!important;
+}.carts{
+display: flex;
+ justify-content:center;
+ flex-wrap: wrap;
+}
+.cart h2{
+font-weight:bold;
+font-size:2.4em;
+margin-top:5px;
+margin-bottom:10px;
+}
+.cart a{
+color:black;
+text-decoration:none;
+}
+.col-lg-6{
+    border:3px solid black;
+    padding:13px;
+    margin:auto;
+    background:transparent;
+    transition:all .2s ease-in;
+    margin-bottom:30px;
+    padding-bottom:16px;
+    width:calc(100% - 26px);
+    height:auto;
+    
+}
+
+.col-lg-6 span{
+    font-weight:bolder;
+}
+.col-lg-6:hover,.col-lg-6:focus{
+    background:black;
+    transform:translateY(-4px);
+}
+.col-lg-6:hover *,.col-lg-6:focus *{
+    color:white;
+}
+.col-lg-6 h4{
+    color:black;
+    margin-top:15px;
+ 
+    margin-bottom:15px;
+}
+.col-lg-6 a{
+    color:black;
+}
+.svg{
+width:20px;
+margin-top:-3.5px;
+margin-right:6.5px;
+height:20px;
+}
+.svg path{
+    transition:all .2s ease-in-out;
+}
+.col-lg-6:hover .svg path, .col-lg-6:focus .svg path{
+    fill:white;
+}
+        .form-wrap{width: 100%; background-color:#0278ff; padding: 6.5vw;
+padding-bottom:30px;margin-top:50px;
+padding-top:25px;
+margin-bottom:80px;height:auto;}
+       .form-wrap h1{text-align: center; color: #fff; font-family:'Atyp';margin-bottom: 45px;font-size:2.9em;}
+        textarea{width:100%;background-color:transparent;color:white;padding: 9px 15px; height:100px;resize:none;box-sizing: border-box;font-weight:bold;font-family:'Nexa';border:2.5px solid #fff;margin-bottom:15px;font-family:'Days';font-size:1.15em;}
+        input{width: 100%; background-color: transparent; font-weight:bold;border: 2.5px solid #fff; padding: 7px 15px; box-sizing: border-box; margin-bottom: 15px; font-size:1.15em; color: #fff;font-family:'Days';}
+        
+        input[type="submit"]{margin-top:5px;background: #fff; border: 0; cursor: pointer; color: #0278ff;font-family:'Days';font-weight:bold;border:2.5px solid white;transition:all .2s ease-in;}
+        input[type="submit"]:focus,input[type="submit"]:hover{ background: #0278ff;color:#fff;}
+        ::placeholder{color: #fff;font-weight:bold;}
+         ::-webkit-input-placeholder{color: #fff;font-weight:bold;}
+:-ms-input-placeholder{color: #fff;font-weight:bold;}
+::-ms-input-placeholder{color: #fff;font-weight:bold;}
+::-moz-placeholder{color: #fff;font-weight:bold;opacity:1;}
+:-moz-placeholder{color: #fff;font-weight:bold;opacity:1;}
+    .up{
+float:right;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+footer p{
+    font-size:1.15em;
+}
+.prof{
+text-align:center;
+font-family:'Atyp';
+font-size:2.6em;
+margin-top:15px;
+margin-bottom:10px;
+}
+
+@media(min-width:700px){
+ 
+    .avatar{
+        width:250px;
+        height:250px;
+        margin:auto;
+        margin-top:100px;
+    }
+.prof_p p{
+   text-align:center;
+}
+    .prof_p p{
+        text-align:inherit;
+    }
+    .cart{
+        width:100%;
+        height:auto;
+    }
+    .form-wrap{
+        width:calc(650px - 35px);
+        height:auto;
+margin:auto;
+padding:35px;
+        margin-top:80px;
+margin-bottom:80px;
+    }
+     .avatar img{
+        width:250px;
+        height:250px;
+    }
+    .prof{
+        font-size:2.7em;
+        text-align:center;
+        margin-top:20px;
+    }
+  
+}
+@media(min-width:780px){
+    .avatar{
+        margin-left:0vw;
+        float:left;
+        margin-top:0px;
+        width:275px;
+        height:275px;
+    }
+    .avatar img{width:275px;
+        height:275px;
+    }
+    .profs{
+    width:325px;
+    float:right;
+}
+    .prof{
+        text-align:center;
+       margin-top:25px;
+      font-size:2.3em;
+    }
+    .profall{
+        margin:auto;
+        margin-top:120px;
+        display:block;
+        width:100%;
+        height:320px;
+    }
+    .prof_p{
+        width:auto;
+    }
+    }
+
+   
+.time{
+float:right;
+display:flex;
+justify-content:center;
+position:relative;
+color:white;
+top:-60px;
+background:#58dc96;
+padding:11px;
+width:auto;
+}
+.fasco:hover .time,.fasco:focus .time{
+background:white!important;
+color:#58dc96!important;
+}
+.red{
+color:white;
+}
+.allabtndiv{
+width:150px;
+height:auto;
+margin:auto;
+Margin-top:30px;
+}
+.allabtn{
+padding:13px;
+border:3px solid black;
+background:white;
+width:150px;
+height:auto;
+margin:auto;
+font-family:'Days';
+Font-weight:bolder;
+font-size:1.25em;
+transition:all .2s ease-in-out;
+}
+.allabtn:hover, .allabtn:focus{
+background:black;
+Color:white;
+}
+</style>
+</head>
+<body>
+		<nav><div class="navcontent">
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo"><img alt="Logo" src="/mybrand.svg"></label>
+      <ul>
+<li><a class="active"><b>Home</b></a></li>
+<li><a href="/history/"><b>History</b></a></li>
+<li><a href="/blog/"><b>Blog</b></a></li>
+</ul></div>
+</nav><div class="page-content">
+<div class="profall">
+<div class="avatar">
+<img alt="Vladislav Gubarev" id="logo" src="/avatar.jpg">
+</div>
+<div class="profs"><h2 class="prof">Vladislav Gubarev</h2>
+<div class="prof_p">
+<p>Programming since 2018.</p>
+<p>I know HTML, CSS, JS, PHP, MYSQL. I can create a site, finish, or remake it.</p>
+<p>Spend my free time by studying, watching films, and creating projects.</p>
+</div></div></div>
+<h2 class="art_h">Posts:</h2>
+<div class="articles"></div>
+<div class="allabtndiv"><a href="/blog/"><button class="allabtn">See all</button></a></div>
+<h2 class="ex_h">Projects:</h2>
+<div class="carts">
+<div class="cart lp cartf"><a href="https://learnpearls.ru">
+<h2 style="color:#02a66f">LearnPearls</h2>
+<p>There you can find about 150 lines from Bible. This site was created for participants of Memorable Pearls contest.</p></a>
+</div>
+<!--<div class="cart fasco">
+<h2 style="color:#58dc96">Acti</h2>
+<div class="time">Soon!</div>
+<p>Acti is a widget that is going to help to te your startup, social networks, collect opinions, interview, etc.</p>
+</div>--></div></div>
+<div id="example" class="form-wrap">
+        <a id="form"></a>
+            <form id="myform" action="/send.php" method="post">
+            
+                <h1>Write me</h1>
+                <input type="text" placeholder="Name" name="name" required>
+                <input type="email" placeholder="Email" name="mail" required>
+                <textarea placeholder="Message" name="message" required></textarea>
+<input type="number" name="problem" placeholder="10+5=?">
+                <input type="submit" value="Send">          
+<?php if(isset($_GET['incor'])){
+echo '<script>alert("Try again.");location.href="/";</script>';
+}
+if(isset($_GET['success'])){
+echo '<script>alert("Success!");location.href="/";</script>';
+}
+?>      
+            </form>
+</div>
+<footer class="staticf">
+<div class="contacts">
+<a target="_blank" rel="noopener noreferrer" class="text-grey-lightest" href="https://twitter.com/gubarev_dev"><i class="fab fa-twitter-square fa-2x"></i></a>
+<a target="_blank" rel="noopener noreferrer" class="fa-2x" href="https://instagram.com/gubarev.official"><i class="fab fa-instagram"></i></a>
+<a target="_blank" rel="noopener noreferrer" class="fa-2x" href="https://github.com/Vladislav959"><i class="fab fa-github-square"></i></a>
+<a target="_blank" rel="noopener noreferrer" class="fa-2x medium" href="https://dev.to/vla_doss"><i class="fab fa-dev"></i></a>
+<a target="_blank" rel="noopener noreferrer" class="fa-2x" href="https://dribbble.com/vla_doss"><i class="fab fa-dribbble-square"></i></a>
+</div><div class="cont"><b><span style="margin-left:40px">+7 (916) 932-18-82</span></b>
+<b><span>mail@gubarev.site</span></b>
+<b><span>© 2020 Vladislav Gubarev</span></b></div>
+</footer>
+<footer class="mobilef">
+<div class="contacts">
+<a target="_blank" rel="noopener noreferrer" class="text-grey-lightest" href="https://twitter.com/gubarev_dev"><i class="fab fa-twitter-square fa-2x"></i></a>
+<a target="_blank" rel="noopener noreferrer" class="fa-2x" href="https://instagram.com/gubarev.official"><i class="fab fa-instagram"></i></a>
+<a target="_blank" rel="noopener noreferrer" class="fa-2x" href="https://github.com/Vladislav959"><i class="fab fa-github-square"></i></a>
+<a target="_blank" rel="noopener noreferrer" class="fa-2x medium" href="https://dev.to/vla_doss"><i class="fab fa-dev"></i></a>
+<a target="_blank" rel="noopener noreferrer" class="fa-2x" href="https://dribbble.com/vla_doss"><i class="fab fa-dribbble-square"></i></a>
+</div><p>+7 (916) 932-18-82</p>
+<p>mail@gubarev.site</p>
+<p>© 2020 Vladislav Gubarev</p>
+</footer>
+<script>
+'use strict';
+
+function setupIcons() {
+  const lightSchemeIcon = document.querySelector('link#light-scheme-icon');
+  const darkSchemeIcon = document.querySelector('link#dark-scheme-icon');
+  
+  function setLight() {
+    document.head.append(lightSchemeIcon);
+    darkSchemeIcon.remove();
+  }
+
+  function setDark() {
+    lightSchemeIcon.remove();
+    document.head.append(darkSchemeIcon);
+  }
+
+
+  const matcher = window.matchMedia('(prefers-color-scheme:dark)');
+  function onUpdate() {
+    if (matcher.matches) {
+      setDark();
+    } else {
+      setLight();
+    }
+  }
+  matcher.addListener(onUpdate);
+  onUpdate();
+}
+
+setupIcons();
+var temp = document.querySelector(".articles");
+
+fetch('https://dev.to/api/articles?username=vla_doss')
+	.then((response) => response.json())
+	.then(data => {
+		console.log(data);
+		let output = '';
+let ii = 0;
+while(ii < 3){	
+			console.log(data[ii].title);
+			 output += `
+					<div class="col-lg-6"><a href="${data[ii].url}">
+                        <div class="single-blog media">
+                            <div class="media-body align-self-center">
+                                <h4>${data[ii].title}</h4>
+                                <p>${data[ii].description}</p>
+                                <span><svg xmlns="http://www.w3.org/2000/svg" class="svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z"/></svg>${data[ii].positive_reactions_count}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${data[ii].readable_publish_date}, 2020</span>
+                            </div>
+                        </div></a>
+                    </div>
+			`;
+ii++;
+		}
+		temp.innerHTML = output;
+		//document.getElementById("blogpost").innerHTML = output;
+}).catch(error => console.log(error));
+</script>
+</body>
+</html>

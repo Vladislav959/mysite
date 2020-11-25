@@ -1,0 +1,19 @@
+{   "name": "Diarry",
+    "short_name": "Diarry",
+    "theme_color": "#fff",
+    "background_color": "#fff",
+    "display": "standalone",
+    "orientation": "portrait",
+    "description" : "Diarry - простой в использовании инструмент для просмотра домашнего задания.",
+    "start_url": "/diarry/",
+"scope":"/diarry/",
+    "icons": [
+    {
+      "src": "/diarry/maskable_icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+"purpose":"maskable any"
+    }
+    ],
+    "lang": "ru"
+}

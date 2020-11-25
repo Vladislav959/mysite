@@ -1,0 +1,119 @@
+<html>
+<head>
+<title>Calcie</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<meta name="viewport" content="width:device-width,initial-scale:1">
+</head>
+<body>
+<select class="select1">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+</select>
+<input class="total" type="number" placeholder="total">
+<input type="text" class="input2" placeholder="name">
+<input type="number" class="input1" placeholder="number">
+<input type="text" class="input2" placeholder="name">
+<input type="number" class="input1" placeholder="number">
+<input type="text" class="input2" placeholder="name">
+<input type="number" class="input1" placeholder="number">
+<input type="text" class="input2" placeholder="name">
+<input type="number" class="input1" placeholder="number">
+<input type="button" value="qqqq" onclick="qqqq()">
+<p class="text"></p>
+
+<script>
+function qqqq(){
+var personcount = $(".select1").val();
+console.log(personcount);
+var total=$(".total").val();
+console.log(total);
+var input1 = document.getElementsByClassName( 'input1' ),
+    allvalues1  = [].map.call(input1, function( input ) {
+        return input.value;
+    }).join( '|' );
+    var input2 = document.getElementsByClassName( 'input2' ),
+    allvalues2  = [].map.call(input2, function( input ) {
+        return input.value;
+    }).join( '|' );
+    
+console.log(allvalues1);
+console.log(allvalues2);
+var allvalues=[];
+var counter=0;
+while(counter<=personcount){
+var result1=allvalues1[counter];
+var result2=allvalues2[counter];
+allvalues.push({name:result2,number:result1});
+counter++;}
+console.log(allvalues);
+var arrNames=[];
+Object.keys(allvalues).forEach(function(key){
+var val=allvalues[key]["number"];
+arrNames.push(val);});
+var perscountout=personcount++;
+var firsttime = true;
+counter= 0;
+var isonlyone;
+while(counter<=personcount){
+if(arrNames[counter]!=0&&firsttime){
+isonlyone=true;
+firsttime=false;
+}
+else if(arrNames[counter]!=0&&!firsttime){
+isonlyone=false;
+counter=perscountout;}
+counter++;
+}
+if(isonlyone){
+var totalresult=total % personcount;
+$(".text").text="Every person should pay the payer for "+totalresult+"dollars";
+}
+else{
+var littlethanneed=[];
+var morethanneed=[];
+var needtopay=total % personcount;
+counter=0;
+while(counter<=personcount){
+if(arrNames[counter]< needtopay){
+littlethanneed.push(allvalues[counter]);
+}
+else if(arrNames[counter]> needtopay){
+morethanneed.push(allvalues[counter]);
+}
+counter++;}
+var mtnlength=Object.keys(morethanneed).length;
+var ltnlength=Object.keys(littlethanneed).length;
+var howmanypayto= morethanneed;
+var whopays=littlethanneed;
+counter=0;
+while(counter<=mtnlength){
+var result=howmanypayto[counter].number-needtopay;
+howmanypayto[counter].number=result;
+counter++;
+}
+counter=0;
+while(counter<=ltnlength){
+var result=needtopay-whopays[counter].number;
+whopays[counter].number=result;
+counter++;
+}
+var output="Need to pass ";
+counter=0;
+while(counter<=ltnlength){
+output = output + whopays[counter].name + " for " + whopays[counter].number + ", ";
+counter++;
+}
+output = output.slice(0,-2);
+output = output + ". From need to pay ";
+counter=0;
+while(counter<=mtnlength){
+output = output + howmanypayto[counter].name + " for " + howmanypayto[counter].number + ", ";
+counter++;
+}
+output = output.slice(0,-2);
+output = output + ".";
+$(".text").text=output;}}
+</script>
+</body></html>
