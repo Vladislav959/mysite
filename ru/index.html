@@ -340,13 +340,6 @@ Color:white;
                 <textarea placeholder="Сообщение" name="message" required></textarea>
 <input type="number" name="problem" placeholder="10+5=?">
                 <input type="submit" value="Отправить">    
-<?php if(isset($_GET['incor'])){
-echo '<script>alert("Попробуйте снова.");location.href="/ru/";</script>';
-}
-elseif(isset($_GET['success'])){
-echo '<script>alert("Отправлено!");location.href="/ru/";</script>';
-}
-?>      
             </form>
 
 </div>
