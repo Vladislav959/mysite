@@ -348,14 +348,7 @@ Color:white;
                 <input type="email" placeholder="Email" name="mail" required>
                 <textarea placeholder="Message" name="message" required></textarea>
 <input type="number" name="problem" placeholder="10+5=?">
-                <input type="submit" value="Send">          
-<?php if(isset($_GET['incor'])){
-echo '<script>alert("Try again.");location.href="/";</script>';
-}
-if(isset($_GET['success'])){
-echo '<script>alert("Success!");location.href="/";</script>';
-}
-?>      
+                <input type="submit" value="Send">   
             </form>
 </div>
 <footer class="staticf">
