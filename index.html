@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <script>
 if (navigator.language = 'ru-RU'){
-window.location.href="/ru/"
+//window.location.href="/ru/"
 }
 </script>
 <meta name="format-detection" content="telephone=no"/>
@@ -340,16 +340,13 @@ Color:white;
 <p>Acti is a widget that is going to help to te your startup, social networks, collect opinions, interview, etc.</p>
 </div>--></div></div>
 <div id="example" class="form-wrap">
-        <a id="form"></a>
-            <form id="myform" action="https://asdvost.online/send" method="get">
-            
                 <h1>Write me</h1>
                 <input type="text" placeholder="Name" name="name" required>
                 <input type="email" placeholder="Email" name="mail" required>
                 <textarea placeholder="Message" name="message" required></textarea>
 <input type="number" name="problem" placeholder="10+5=?">
-                <input type="submit" value="Send">   
-            </form>
+                <input type="submit" class="submit_btn" value="Send">
+	<p class="error"></p>
 </div>
 <footer class="staticf">
 <div class="contacts">
@@ -375,6 +372,21 @@ Color:white;
 </footer>
 <script>
 'use strict';
+document.querySelector('.submit_btn').onclick = function(){
+	let problemval = document.querySelector('input[name="problem"]').value;
+	if(problemval == '15'){
+	let name = document.querySelector('input[name="name"]').value;
+	let mail = document.querySelector('input[name="mail"]').value;
+	let message = document.querySelector('input[name="message"]').value;
+fetch('https://asdvost.online/send?name=' + name + '&mail=' + mail + '&message=' + message)
+	.then((response) => {
+alert(response);
+})
+	}
+	else{
+	document.querySelector('.error').innerText = 'Try again.';
+	}
+}
 
 function setupIcons() {
   const lightSchemeIcon = document.querySelector('link#light-scheme-icon');
