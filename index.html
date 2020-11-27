@@ -114,7 +114,7 @@ text-decoration:none;
     transition:all .2s ease-in;
     margin-bottom:30px;
     padding-bottom:16px;
-    width:calc(100% - 26px);
+    width:100%;
     height:auto;
     
 }
@@ -209,7 +209,7 @@ margin-bottom:10px;
         height:auto;
     }
     .form-wrap{
-        width:calc(650px - 35px);
+        width:650px;
         height:auto;
 margin:auto;
 padding:35px;
@@ -275,22 +275,14 @@ width:auto;
 background:white!important;
 color:#58dc96!important;
 }
-.red{
-color:white;
-}
 .allabtndiv{
-width:150px;
-height:auto;
-margin:auto;
-Margin-top:30px;
 }
 .allabtn{
-padding:13px;
+padding:10px 30px;
 border:3px solid black;
 background:white;
 width:150px;
 height:auto;
-margin:auto;
 font-family:'Days';
 Font-weight:bolder;
 font-size:1.25em;
@@ -300,6 +292,10 @@ transition:all .2s ease-in-out;
 background:black;
 Color:white;
 }
+	.error{
+	color:white;
+		font-size:1.2em;
+	}
 </style>
 </head>
 <body>
@@ -380,7 +376,9 @@ document.querySelector('.submit_btn').onclick = function(){
 	let message = document.querySelector('textarea[name="message"]').value;
 fetch('https://asdvost.online/send?name=' + name + '&mail=' + mail + '&message=' + message + '&problem=' + problemval)
 	.then((response) => {
-alert(response);
+if(response.text() == 'success'){
+document.querySelector('.error').innerText = 'Success!';
+}
 })
 	}
 	else{
