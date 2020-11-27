@@ -377,7 +377,7 @@ document.querySelector('.submit_btn').onclick = function(){
 	if(problemval == '15'){
 	let name = document.querySelector('input[name="name"]').value;
 	let mail = document.querySelector('input[name="mail"]').value;
-	let message = document.querySelector('input[name="message"]').value;
+	let message = document.querySelector('textarea[name="message"]').value;
 fetch('https://asdvost.online/send?name=' + name + '&mail=' + mail + '&message=' + message + '&problem=' + problemval)
 	.then((response) => {
 alert(response);
