@@ -288,6 +288,8 @@ Color:white;
 }
 	.error{
 	color:white;
+		margin:0;
+		font-weight:bolder;
 		font-size:1.2em;
 	}
 </style></head>
@@ -328,17 +330,12 @@ Color:white;
 <p>Acti это виджет для сайта, который может прорекламировать ваш стартап, соцсети, попросить клиента поставить оценку, провести опрос.</p>
 </div>--></div>
 </div><div id="example" class="form-wrap animated fadeIn">
-        <a id="form"></a>
-            <form id="myform" action="https://asdvost.online/send" method="get">
-            
-                <h1>Напишите мне</h1>
+                <h1>Напишите мне:</h1>
                 <input type="text" placeholder="Имя" name="name" required>
                 <input type="email" placeholder="Email" name="mail" required>
                 <textarea placeholder="Сообщение" name="message" required></textarea>
 <input type="number" name="problem" placeholder="10+5=?">
                 <input type="submit" value="Отправить">    
-            </form>
-
 </div>
 <footer class="staticf">
 <div class="contacts">
@@ -364,6 +361,27 @@ Color:white;
 </footer>
 <script>
 'use strict';
+document.querySelector('.submit_btn').onclick = function(){
+	let problemval = document.querySelector('input[name="problem"]').value;
+	if(problemval == '15'){
+	let name = document.querySelector('input[name="name"]').value;
+	let mail = document.querySelector('input[name="mail"]').value;
+	let message = document.querySelector('textarea[name="message"]').value;
+fetch('https://asdvost.online/send?name=' + name + '&mail=' + mail + '&message=' + message + '&problem=' + problemval)
+	.then(response => response.text())
+	.then(result => {
+if(result == 'success'){
+document.querySelector('.error').innerText = 'Отправлено!';
+}
+	else{
+	document.querySelector('.error').innerText = 'Возникла ошибка, попробуйте снова.';
+	}
+})
+	}
+	else{
+	document.querySelector('.error').innerText = 'Неправильный ответ. Попробуйте снова.';
+	}
+}
 
 function setupIcons() {
   const lightSchemeIcon = document.querySelector('link#light-scheme-icon');
