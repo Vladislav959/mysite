@@ -374,12 +374,13 @@ document.querySelector('.submit_btn').onclick = function(){
 	let mail = document.querySelector('input[name="mail"]').value;
 	let message = document.querySelector('textarea[name="message"]').value;
 fetch('https://asdvost.online/send?name=' + name + '&mail=' + mail + '&message=' + message + '&problem=' + problemval)
-	.then((response) => {
-if(response.text() == 'success'){
+	.then(response => response.text())
+	.then(result => {
+if(result == 'success'){
 document.querySelector('.error').innerText = 'Success!';
 }
 	else{
-	document.querySelector('.error').innerText = response.text();
+	document.querySelector('.error').innerText = result;
 	}
 })
 	}
