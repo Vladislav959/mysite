@@ -34,10 +34,25 @@
    line-height:1.2;
 }
 	input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active  {
-    -webkit-box-shadow: 0 0 0 30px white inset !important;
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-animation: autofill 0s forwards;
+    animation: autofill 0s forwards;
+}
+
+@keyframes autofill {
+    100% {
+        background: transparent;
+        color: inherit;
+    }
+}
+
+@-webkit-keyframes autofill {
+    100% {
+        background: transparent;
+        color: inherit;
+    }
 }
 .avatar img{
 width:180px;
@@ -231,7 +246,7 @@ margin-bottom:80px;
     .avatar{
         margin-left:0vw;
         float:left;
-        margin-top:0px;
+        margin-top:20px;
         width:275px;
         height:275px;
     }
@@ -244,7 +259,7 @@ margin-bottom:80px;
 }
     .prof{
         text-align:center;
-       margin-top:25px;
+       margin-top:0px;
       font-size:2.3em;
     }
     .profall{
