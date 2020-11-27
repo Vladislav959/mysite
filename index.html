@@ -378,6 +378,9 @@ fetch('https://asdvost.online/send?name=' + name + '&mail=' + mail + '&message='
 if(response.text() == 'success'){
 document.querySelector('.error').innerText = 'Success!';
 }
+	else{
+	document.querySelector('.error').innerText = response.text();
+	}
 })
 	}
 	else{
