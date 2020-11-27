@@ -293,6 +293,8 @@ Color:white;
 }
 	.error{
 	color:white;
+		font-weight:bolder;
+		margin:0;
 		font-size:1.2em;
 	}
 </style>
@@ -380,7 +382,7 @@ if(result == 'success'){
 document.querySelector('.error').innerText = 'Success!';
 }
 	else{
-	document.querySelector('.error').innerText = result;
+	document.querySelector('.error').innerText = 'An error occured. Try again.';
 	}
 })
 	}
