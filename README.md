@@ -1,4 +1,4 @@
-#### This is ny own website.
+## This is my own website.
 Built with just HTML, CSS and JS.
 
 Redesign is soon.
