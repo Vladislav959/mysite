@@ -33,7 +33,7 @@ margin-top:75px;
 <li><a href="/blog"><b>Blog</b></a></li>
 </ul></div>
 </nav><div class="page-content">
-<h2 class="mainh">Not found</h2></div>
+<h2 class="mainh"></h2></div>
 <footer class="staticf">
 <div class="contacts">
 <a target="_blank" rel="noopener noreferrer" class="text-grey-lightest" href="https://twitter.com/gubarev_dev"><i class="fab fa-twitter-square fa-2x"></i></a>
@@ -59,7 +59,13 @@ margin-top:75px;
 
 <script>
 'use strict';
-
+let mainh = document.querySelector('.mainh');
+if(window.location.href.includes("/ru")){
+mainh.innerText = "Не найдено";
+}
+else{
+mainh.innerText = "Not found";
+}
 function setupIcons() {
   const lightSchemeIcon = document.querySelector('link#light-scheme-icon');
   const darkSchemeIcon = document.querySelector('link#dark-scheme-icon');
