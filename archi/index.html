@@ -443,12 +443,19 @@ color:white;
 				margin-top:10px;
 			}
 		}
+		
 		@media(max-width:450px){
 			.item{
 				width:calc(100vw - 100px);
 				height:calc(100vw - 100px);
 				margin-left:20px;
 				margin-right:20px;
+			}
+			header{
+				padding:20px 50px;
+			}
+			.menu__btn{
+				right:12px;
 			}
 			.itemlast{
 				display:none;
@@ -472,6 +479,9 @@ color:white;
 			.page{
 				display:block;
 				flex-wrap: nowrap;
+			}
+			.menu__btn{
+				right:0;
 			}
 			header{
 				padding-right: 15px;
@@ -657,7 +667,7 @@ color:white;
 		<input type="submit" value="Отправить">
 	</form>
 </section>
-<footer>
+<footer class="animated fadeIn wow">
 	<div class="footer_logo">
 		<a href="#top">
 		<img src="logonew.svg"></a>
