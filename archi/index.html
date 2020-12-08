@@ -473,6 +473,22 @@ color:white;
     padding: 2vw 2.4vw;
 }
 		}
+		@media(max-width:440px){
+			footer p{
+				font-size:1em;
+			}
+		}
+		@media(max-width:400px){
+			footer{
+				display:block;
+			}
+			.footer_logo{
+				display:none;
+			}
+			footer p{
+				float:right;
+			}
+		}
 		@media(max-width:385px){
 			.page{
 				display:block;
@@ -666,7 +682,7 @@ color:white;
 		<input type="submit" value="Отправить">
 	</form>
 </section>
-<footer>
+<footer class="animated fadeIn wow">
 	<div class="footer_logo">
 		<a href="#top">
 		<img src="logonew.svg"></a>
