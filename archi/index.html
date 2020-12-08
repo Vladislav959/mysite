@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sushko Architects</title>
+<link rel="icon" type="image/png" href="icon.png">
+	 <link
+    rel="stylesheet"
+    href="animate.css"
+  />
+	<style>
+		@font-face{
+			font-family:'Sharp';
+			src:url('./sharp.ttf');
+		}
+		@font-face{
+			font-family:'Euclid';
+			src:url('./euclid.ttf');
+		}
+		*{
+			box-sizing:border-box;
+		}
+		:focus{
+			outline:none;
+		}
+		body{
+			font-family:'Euclid';
+			margin:0;
+			padding:0;
+		}
+		h1,h2,h3,h4,h5{
+			font-family:'Sharp';
+			font-weight: 500;
+    letter-spacing: 0.3px;
+		}
+		a{
+			font-family:'Euclid';
+			color:black;
+			text-decoration: none;
+		}
+		::selection{
+			background:#000;
+			color:#fff;
+		}
+		header{
+			display:flex;
+align-items: center;
+			justify-content: space-between;
+			padding:20px 60px;
+			padding-right:45px;
+			position: relative;
+			width:100%;
+			z-index:20;
+			height: fit-content;
+		}
+		.logo{
+		width: 140px;
+    	margin-top: 5px;
+		}
+		.logo img{
+			width:100%;
+		}
+		header ul{
+			list-style-type: none;
+			display: flex;
+		}
+		header ul li{
+			margin-left:15px;
+			font-size:1.25em;
+		}
+		.hamburger-menu{
+	display:none;
+}
+#menu__toggle {
+  opacity: 0;
+}
+
+#menu__toggle:checked ~ .menu__btn > span {
+  transform: rotate(45deg);
+}
+#menu__toggle:checked ~ .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+#menu__toggle:checked ~ .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+  visibility: visible;
+  left: 0;
+}
+
+.menu__btn {
+  display: flex;
+    align-items: center;
+    position: relative;
+    top:-12px;
+    right: 0;
+    width: 37px;
+    height: 37px;
+    cursor: pointer;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+    position: absolute;
+    width: 100%;
+    height: 2.2px;
+    background-color: black;
+    transition-duration: .25s;
+}
+.menu__btn > span::before {
+  content: '';
+  top: -12px;
+}
+.menu__btn > span::after {
+  content: '';
+  top: 12px;
+}
+
+.menu__box {
+      display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    z-index: 200;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    background-color: black;
+    transition-duration: .25s;
+}
+
+.menu__item {
+      display: block;
+    padding: 16px 24px;
+    color: white;
+    font-family: 'Euclid';
+    font-size: 20px;
+    font-weight: 400;
+    text-decoration: none;
+    transition-duration: .25s;
+}
+		.page{
+			padding: 40px 60px;
+			padding-right:0px;
+			display: flex;
+			flex-wrap: wrap;
+			position: relative;
+			padding-top:0px;
+		}
+		.item{
+			width:calc(20vw - 43px);
+			height:calc(20vw - 43px);
+			background-size: cover;
+			margin-right:25px;
+			position: relative;
+			border-radius:12px;
+			margin-bottom: 25px;
+		}
+		
+		.item_content{
+			position: absolute;
+			bottom: 1.4vw;
+			right:1.2vw;
+			user-select:none;
+			left:1.2vw;
+			width:fit-content;
+			transition: opacity .35s;
+			opacity: 0;
+			z-index:40;
+		}
+
+		.item p{
+			top:11px;
+			font-size:1.35vw;
+position:relative;
+color:white;
+		}
+		.item span{
+			font-size: 0.95vw;
+			cursor:pointer;
+			border-radius:0.5vw;
+			background:rgba(255,255,255,0.8);
+			padding: 0.4vw 0.65vw;
+			
+		}
+		.itemlast{
+			display:none;
+		}
+		.darken{
+			position: absolute;
+			bottom: 0;
+			left:0;
+			z-index:30;
+			background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgb(0 0 0 / 58%) 80%);
+			transition: opacity .35s;
+			border-radius:10px;
+			width:100%;
+			height:70%;
+			opacity:0;
+		}
+		.item:hover .darken{
+			opacity:1;
+		}
+		.item:hover .item_content{
+			opacity:1;	
+		}
+		.aboutpage{
+			width:100%;
+			background:black;
+			padding:8% 7%;
+			display: flex;
+			justify-content:center;
+		}
+		.aboutpage *::selection{
+			background:#fff;
+			color:#fff;
+		}
+		.avatar{
+			width:270px;
+			height: 270px;
+		}
+		.avatar img{
+			width:100%;
+			height: 100%;
+			border-radius: 50%;
+		}
+		.ap_text{
+			align-self: center;
+    width: 40%;
+    margin-left: 5%;
+		}
+		.ap_text *{
+			color:white;
+			margin:0;
+		}
+		.ap_text h1{
+			font-size:2em;
+		}
+		.ap_text p{
+			font-size:1.1em;
+			display: inline-block;
+		}
+		.sendpage{
+			padding: 80px 70px;
+			width:100%;
+			display:flex;
+			justify-content:center;
+			align-items:center;
+		}
+		.sendpage form{
+			width:550px;
+			display: flex;
+			flex-direction: column;
+			height: fit-content;
+		}
+		.sendpage form textarea{
+			resize:none;
+			height:120px;
+		}
+		.sendpage h2{
+			margin:0;
+			font-size:1.6em;
+			margin-bottom:15px;
+		}
+		::placeholder{
+			color:black;
+		}
+		.sendpage form input[type="submit"],.sendpage form input[type="text"], .sendpage form textarea{
+			padding:8px;
+			border:2.5px solid black;
+			font-size:1.2em;
+			font-family:'Euclid';
+    		border-radius: 8px;
+			margin-bottom:10px;
+		}
+		.sendpage form input[type="text"], .sendpage form textarea{
+	transition:box-shadow .35s;
+			background:transparent;
+		}
+		.sendpage form input[type="text"]:focus, .sendpage form textarea:focus, .sendpage form input[type="submit"]:focus{
+			box-shadow:0 0 0 3.5px rgb(0 0 0 / 11%);
+		}
+		.sendpage form input[type="submit"]{
+			width: fit-content;
+			background:black;
+			padding:6px 14px;
+			color:white;
+			transition:background .35s, color .35s, box-shadow .35s;
+		}
+		.sendpage form input[type="submit"]:hover{
+			background:#3a3a3a;
+			border-color:#3a3a3a;
+		}
+		.sendpage form input[type="submit"]:focus{
+			background:transparent;
+			color:black;
+			border-color:black;
+		}
+		footer{
+			width:100%;
+			padding:20px 25px;
+			background:#f3f3f3;
+			display:flex;
+			justify-content:space-between;
+		}
+		.footer_logo{
+			width:120px;
+			align-self: center;
+			margin-top:6px;
+		}
+		.footer_logo img{
+			width:100%;
+		}
+		footer p{
+			font-size:1.1em;
+		}
+		@media(max-width:1160px){
+			.item{
+				width:calc(25vw - 48px);
+				height:calc(25vw - 48px);
+			}
+			.itemlast{
+				display:block;
+			}
+			.item_content{
+				left:1.4vw;
+				right:1.4vw;
+				bottom:1.65vw;
+			}
+			.item p{
+				font-size:1.65vw;
+			}
+			.item span{
+				font-size:1.25vw;
+				border-radius:0.6vw;
+			}
+		}
+		@media(max-width:935px){
+			.header_links li{
+				font-size:1.1em;
+			}
+		}
+		@media(max-width:885px){
+.ap_text{
+	width:55%;
+}
+		}
+		@media(max-width:875px){
+			.item{
+				width:calc(33vw - 55px);
+				height:calc(33vw - 55px);
+			}
+			.itemlast{
+				display:none;
+			}
+			.item_content{
+				left: 1.8vw;
+    right: 1.8vw;
+    bottom: 2.35vw;
+			}
+			.item p{
+				font-size:2.15vw;
+				top:10px;
+			}
+			.item span{
+				font-size:1.65vw;
+				border-radius:0.8vw;
+				padding:0.7vw 1vw;
+			}
+		}
+		@media(max-width:692px){
+.aboutpage{
+	flex-direction:column;
+	padding: 7% 6%;
+	align-items:center;
+}
+.avatar{
+	width:180px;
+	height:180px;
+}
+.ap_text{
+	width:85%;
+	margin-top:20px;
+}
+.ap_text h1{
+	text-align:center;
+	margin-bottom:3px;
+}
+		}
+
+		@media(max-width:685px){
+			.item{
+				width:calc(50vw - 73px);
+				height:calc(50vw - 73px);
+			}
+			.itemlast{
+				display:block;
+			}
+			.item_content{
+				left: 2.6vw;
+    right: 2.6vw;
+    bottom: 3.3vw;
+}
+			.item p{
+				font-size: 3.4vw;
+    top: 13px;
+			}
+			.item span{
+				    font-size: 2.35vw;
+    border-radius: 1vw;
+    padding: 1vw 1.4vw;
+}
+.hamburger-menu{
+	display:block;
+}
+.header_links{
+	display:none;
+}
+		}
+	</style>
+</head>
+<body style="overflow-y:scroll">
+
+	<a name="top"></a>
+	<header class="animated fadeIn wow">
+		<div class="logo">
+			<img src="logonew.svg">
+		</div>
+		<ul class="header_links">
+			<li><a href="#">главная</a></li>
+			<li><a href="#">обо мне</a></li>
+			<li><a href="#">архитектура</a></li>
+			<li><a href="#">дизайн</a></li>
+		</ul>
+		<div class="hamburger-menu">
+    <input id="menu__toggle" type="checkbox" />
+    <label class="menu__btn" for="menu__toggle">
+      <span></span>
+    </label>
+
+    <ul class="menu__box">
+      <li><a class="menu__item" href="#">Главная</a></li>
+			<li><a class="menu__item" href="#">Обо мне</a></li>
+			<li><a class="menu__item" href="#">Архитектура</a></li>
+			<li><a class="menu__item" href="#">Дизайн</a></li>
+    </ul>
+  </div>
+	</header>
+	<section class="page animated fadeIn wow">
+<div class="item" data-src="страница1-5-image (1).jpg">
+	<div class="darken"></div>
+	<div class="item_content">
+		<p>Заголовок</p>
+		<a href="#"><span>Посмотреть</span></a>
+	</div>
+</div>
+<div class="item" data-src="страница1-5-image (2).jpg">
+	<div class="darken"></div>
+	<div class="item_content">
+		<p>Заголовок</p>
+		<a href="#"><span>Посмотреть</span></a>
+	</div>
+</div>
+<div class="item" data-src="страница1-5-image (3).jpg">
+	<div class="darken"></div>
+	<div class="item_content">
+		<p>Заголовок</p>
+		<a href="#"><span>Посмотреть</span></a>
+	</div>
+</div>
+<div class="item" data-src="страница1-5-image (4).jpg">
+	<div class="darken"></div>
+	<div class="item_content">
+		<p>Заголовок</p>
+		<a href="#"><span>Посмотреть</span></a>
+	</div>
+</div>
+<div class="item" data-src="страница1-5-image (5).jpg">
+	<div class="darken"></div>
+	<div class="item_content">
+		<p>Заголовок</p>
+		<a href="#"><span>Посмотреть</span></a>
+	</div>
+</div>
+<div class="item" data-src="страница1-5-image (6).jpg">
+	<div class="darken"></div>
+	<div class="item_content">
+		<p>Заголовок</p>
+		<a href="#"><span>Посмотреть</span></a>
+	</div>
+</div>
+<div class="item" data-src="страница1-5-image (7).jpg">
+	<div class="darken"></div>
+	<div class="item_content">
+		<p>Заголовок</p>
+		<a href="#"><span>Посмотреть</span></a>
+	</div>
+</div>
+<div class="item" data-src="страница1-5-image (8).jpg">
+	<div class="darken"></div>
+	<div class="item_content">
+		<p>Заголовок</p>
+		<a href="#"><span>Посмотреть</span></a>
+	</div>
+</div>
+<div class="item" data-src="страница1-5-image (9).jpg">
+	<div class="darken"></div>
+	<div class="item_content">
+		<p>Заголовок</p>
+		<a href="#"><span>Посмотреть</span></a>
+	</div>
+</div>
+<div class="item" data-src="страница1-5-image (10).jpg">
+	<div class="darken"></div>
+	<div class="item_content">
+		<p>Заголовок</p>
+		<a href="#"><span>Посмотреть</span></a>
+	</div>
+</div>
+<div class="item" data-src="страница1-5-image (11).jpg">
+	<div class="darken"></div>
+	<div class="item_content">
+		<p>Заголовок</p>
+		<a href="#"><span>Посмотреть</span></a>
+	</div>
+</div>
+<div class="item" data-src="страница1-5-image (1).jpg">
+	<div class="darken"></div>
+	<div class="item_content">
+		<p>Заголовок</p>
+		<a href="#"><span>Посмотреть</span></a>
+	</div>
+</div>
+<div class="item" data-src="страница1-5-image (2).jpg">
+	<div class="darken"></div>
+	<div class="item_content">
+		<p>Заголовок</p>
+		<a href="#"><span>Посмотреть</span></a>
+	</div>
+</div>
+<div class="item" data-src="страница1-5-image (3).jpg">
+	<div class="darken"></div>
+	<div class="item_content">
+		<p>Заголовок</p>
+		<a href="#"><span>Посмотреть</span></a>
+	</div>
+</div>
+<div class="item" data-src="страница1-5-image (4).jpg">
+	<div class="darken"></div>
+	<div class="item_content">
+		<p>Заголовок</p>
+		<a href="#"><span>Посмотреть</span></a>
+	</div>
+</div>
+<div class="item itemlast" data-src="страница1-5-image (5).jpg">
+	<div class="darken"></div>
+	<div class="item_content">
+		<p>Заголовок</p>
+		<a href="#"><span>Посмотреть</span></a>
+	</div>
+</div>
+</section>
+<section class="aboutpage animated fadeIn wow">
+	<div class="avatar"><img src="avatar.png"></div>
+	<div class="ap_text">
+		<h1>Евгений Сушко</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+	</div>
+</section>
+<section class="sendpage animated fadeIn wow">
+	<form method="post" onSubmit="return false">
+		<h2>Напишите мне:</h2>
+		<input placeholder="Имя..." type="text" name="name" required>
+		<input placeholder="Почта..." type="text" name="mail" required>
+		<textarea placeholder="Сообщение..." name="message" required></textarea>
+		<input type="submit" value="Отправить">
+	</form>
+</section>
+<footer class="animated fadeIn wow">
+	<div class="footer_logo">
+		<a href="#top">
+		<img src="logonew.svg"></a>
+	</div>
+
+	<p>© Sushko Architects 2020</p>
+</footer>
+<script type="module">
+		let list = document.querySelectorAll(".item");
+
+for (let i = 0; i < list.length; i++) {
+  let url = list[i].getAttribute('data-src');
+  list[i].style.backgroundImage="url('" + url + "')";
+}
+document.querySelector('input[type="submit"]').onclick = ()=>{
+	setTimeout(()=>{alert('Отправлено')},1000);
+}
+document.querySelector('#menu__toggle').onclick = function(){
+if(document.body.getAttribute('style') == 'overflow-y:scroll'){
+	document.body.setAttribute('style','overflow-y:hidden');
+	document.querySelector('.menu__btn').setAttribute('style','right:16.5px');
+}
+else{
+	document.body.setAttribute('style','overflow-y:scroll');
+	document.querySelector('.menu__btn').setAttribute('style','right:0');
+}
+}
+	</script>
+	<script src="wow.js"></script>
+	<script>
+     new WOW().init();
+    </script>
+</body>
+</html>
