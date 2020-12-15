@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0;
+        }
+        *{
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div id='map' style='width: 100vw; height: 100vh;'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoidmxhZG9zcyIsImEiOiJja2lwbGk2dG0wNTcyMzFueWk2a2w5Y3pmIn0.TUY7Uh57rkJWDux_HdtaVQ';
+var map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/vladoss/ckipmxp6r44xt17m3gbp2vk6n',
+maxZoom: 20
+});
+var marker = new mapboxgl.Marker({
+color: "#FFFFFF",
+draggable: true
+}).setLngLat([30.5, 50.5])
+.addTo(map);
+map.addControl(
+new mapboxgl.GeolocateControl({
+positionOptions: {
+enableHighAccuracy: true
+},
+trackUserLocation: true
+})
+);
+setTimeout(function(){
+
+document.querySelector('.mapboxgl-ctrl-geolocate').click();
+},2000)
+</script>
+    
+</body>
+</html>
