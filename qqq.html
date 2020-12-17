@@ -24,6 +24,7 @@
 <body>
     <div id='map' style='width: 100vw; height: 100vh;'></div>
 <script>
+    try{
 let userLongitude, userLatitude;
 function getCoords(position) {
     userLatitude  = position.coords.latitude;
@@ -85,7 +86,10 @@ center: [longitude,latitude]
     }*/
 })
 })
-
+    }
+    catch(err){
+        alert(err);
+    }
 
  
     
