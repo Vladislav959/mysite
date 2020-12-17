@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
+<head>
+ 
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
+    
+    <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +12,9 @@
     <style>
         body{
             margin:0;
+        }
+        .mapboxgl-ctrl-attrib-button{
+            display:none;
         }
         *{
             box-sizing: border-box;
@@ -20,9 +27,7 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoidmxhZG9zcyIsImEiOiJja2lwbGk2dG0wNTcyMzFueWk2a2w5Y3pmIn0.TUY7Uh57rkJWDux_HdtaVQ';
 var map = new mapboxgl.Map({
 container: 'map',
-style: 'mapbox://styles/vladoss/ckipmxp6r44xt17m3gbp2vk6n',
-maxZoom: 20
-});
+style: 'mapbox://styles/vladoss/ckipmxp6r44xt17m3gbp2vk6n'});
 var marker = new mapboxgl.Marker({
 color: "#FFFFFF",
 draggable: true
@@ -48,11 +53,9 @@ geolocate.on('geolocate', function(e) {
 
 map.addControl(geolocate);
 
-
 setTimeout(function(){
 
 document.querySelector('.mapboxgl-ctrl-geolocate').click();
-
 },2000)
 setTimeout(function(){
     var el = document.createElement('div');
@@ -64,6 +67,67 @@ el.style.background = 'black';
 new mapboxgl.Marker(el)
  .setLngLat([lonq,latq])
  .addTo(map);
+ var center = turf.point([lonq, latq]);
+    var radius = 25;
+    var options = {
+      steps: 80,
+      units: 'kilometers'
+    };
+
+    var circle = turf.circle(center, radius, options);
+
+    map.addLayer({
+        "id": "circle-fill",
+        "type": "fill",
+        "source": {
+            "type": "geojson",
+            "data": circle
+        },
+        "paint": {
+            "fill-color": "pink",
+            "fill-opacity": 0.5
+        }
+    });
+    map.addLayer({
+        "id": "circle-outline",
+        "type": "line",
+        "source": {
+            "type": "geojson",
+            "data": circle
+        },
+        "paint": {
+            "line-color": "blue",
+            "line-opacity": 0.5,
+            "line-width": 10,
+            "line-offset": 5
+        },
+        "layout": {
+
+        }
+    });
+    var features = map.queryRenderedFeatures({layers:['circle-fill']});
+console.log(features); 
+    const southWest = new mapboxgl.LngLat(-2.488133, 53.747698);
+const northEast = new mapboxgl.LngLat(-2.488156, 53.748530);
+
+const bounds = new mapboxgl.LngLatBounds(southWest, northEast);
+var polygon = turf.polygon([[[-5, 52], [-4, 56], [-2, 51], [-7, 54], [-5, 52]]], { name: 'poly1' });
+polygon.addTo(map);
+// called every time a new user position is determined
+function checkUserPostion(position) {
+  const {latitude, longitude} = position.coords;
+
+  const isUserInBbx = bounds.contains([longitude, latitude]);
+
+  if (isUserInBbx) {
+  alert('yes')
+  }
+  else{
+      alert('no')
+  }
+}
+
+navigator.geolocation.watchPosition(checkUserPostion);
 },3000)
 </script>
     
