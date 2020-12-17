@@ -74,12 +74,15 @@ let positionIcon = new mapboxgl.Marker(el);
             "fill-opacity": 0.5
         }
     });
-    navigator.geolocation.watchPosition(updateLocation);
+    /*navigator.geolocation.watchPosition(updateLocation);
     function updateLocation(position){
         let {latitude,longitude} = position.coords;
         positionIcon.setLngLat([longitude,latitude]);
         positionIcon.addTo(map);
-    }
+        map.flyTo({
+center: [longitude,latitude]
+});
+    }*/
 })
 })
 
