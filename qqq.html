@@ -24,13 +24,6 @@
 <body>
     <div id='map' style='width: 100vw; height: 100vh;'></div>
 <script>
- (function () {
-    var src = '//cdn.jsdelivr.net/npm/eruda';
-    if (!/eruda=true/.test(window.location) && localStorage.getItem('active-eruda') != 'true') return;
-    document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
-    document.write('<scr' + 'ipt>eruda.init();</scr' + 'ipt>');
-})();
-    try{
 let userLongitude, userLatitude;
 function getCoords(position) {
     userLatitude  = position.coords.latitude;
@@ -43,14 +36,12 @@ new Promise((resolve,reject)=>{
   setTimeout(()=>{resolve(1)},500);
 }).then(result => {
     mapboxgl.accessToken = 'pk.eyJ1IjoidmxhZG9zcyIsImEiOiJja2lwbGk2dG0wNTcyMzFueWk2a2w5Y3pmIn0.TUY7Uh57rkJWDux_HdtaVQ';
-var map = new mapboxgl.Map({
+let map = new mapboxgl.Map({
 container: 'map',
-style: 'mapbox://styles/vladoss/ckipmxp6r44xt17m3gbp2vk6n',
-center: [userLongitude,userLatitude],
-zoom:18
+style: 'mapbox://styles/vladoss/ckipmxp6r44xt17m3gbp2vk6n'
 });
 map.on('load', function() {
-     var el = document.createElement('div');
+     let el = document.createElement('div');
 el.className = 'marker';
 el.style.position = 'relative';
 el.style.width = '55px';
@@ -92,13 +83,6 @@ center: [longitude,latitude]
     }*/
 })
 })
-    }
-    catch(err){
-        alert(err);
-    }
-
- 
-    
 </script>
     
 </body>
