@@ -8,10 +8,18 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Game</title>
     <style>
+        @font-face{
+            font-family:'Roboto';
+            src:url('roboto.ttf');
+        }
+        :focus{
+            outline:none;
+        }
         body{
             margin:0;
+            font-family:'Roboto';
         }
         .mapboxgl-ctrl-attrib-button{
             display:none;
@@ -19,9 +27,24 @@
         *{
             box-sizing: border-box;
         }
+        .outofzone-status{
+            position:fixed;
+            top:10px;
+            font-size:1em;
+            z-index:999;
+            right:10px;
+            display:none;
+            padding:14px;
+            background:white;
+            border-radius:10px;
+            color:black;
+            font-family: 'Roboto';
+        }
+      
     </style>
 </head>
 <body>
+<div class="outofzone-status" id="qwerty">Вернитесь в зону!</div>
     <div id='map' style='width: 100vw; height: 100vh;'></div>
 <script>
 let userLongitude, userLatitude;
@@ -58,14 +81,16 @@ el.style.background = 'black';
 let positionIcon = new mapboxgl.Marker(el);
  positionIcon.setLngLat([userLongitude,userLatitude])
  positionIcon.addTo(map);
- var center = turf.point([50,100]);
-    var radius = 25;
-    var options = {
-      steps: 80,
-      units: 'meters'
-    };
+ let gameZoneOptions = {
+     center: turf.point([userLongitude, userLatitude]),
+     radius: 5,
+     options:{
+         steps:80,
+         units:'meters'
+     }
+ }
 let userPoint = turf.point([userLongitude,userLatitude]);
-    let gameZone = turf.circle(center, radius, options);
+    let gameZone = turf.circle(gameZoneOptions.center, gameZoneOptions.radius, gameZoneOptions.options);
 
     map.addLayer({
         "id": "circle-fill",
@@ -75,12 +100,15 @@ let userPoint = turf.point([userLongitude,userLatitude]);
             "data": gameZone
         },
         "paint": {
-            "fill-color": "pink",
+            "fill-color": "skyblue",
             "fill-opacity": 0.5
         }
     });
     if(!turf.booleanPointInPolygon(userPoint,gameZone)){
-        alert('out of zone!');
+            document.getElementById('qwerty').style.display = 'block';
+    }
+    else{
+        document.getElementById('qwerty').style.display = 'none';
     }
     navigator.geolocation.watchPosition(updateLocation,null,gpsOptions);
     function updateLocation(position){
@@ -90,11 +118,13 @@ let userPoint = turf.point([userLongitude,userLatitude]);
         map.flyTo({
 center: [longitude,latitude]
 });
-userPoint = turf.point([longitude,latitude]);
-if(!turf.booleanPointInPolygon(userPoint,gameZone)){
-        alert('out of zone!');
+    userPoint = turf.point([longitude,latitude]);
+    if(!turf.booleanPointInPolygon(userPoint,gameZone)){
+        if(document.getElementById('qwerty').style.display == 'none'){
+            document.getElementById('qwerty').style.display = 'block';
+        }
     }
-    }
+}
 })
 })
 </script>
