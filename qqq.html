@@ -58,7 +58,7 @@ el.style.background = 'black';
 let positionIcon = new mapboxgl.Marker(el);
  positionIcon.setLngLat([userLongitude,userLatitude])
  positionIcon.addTo(map);
- var center = turf.point([userLongitude, userLatitude]);
+ var center = turf.point([50,100]);
     var radius = 25;
     var options = {
       steps: 80,
