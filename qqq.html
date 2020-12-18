@@ -28,7 +28,6 @@ let userLongitude, userLatitude;
 function getCoords(position) {
     userLatitude  = position.coords.latitude;
     userLongitude = position.coords.longitude;
-    alert(userLatitude);
 }
 new Promise((resolve,reject)=>{
     if(navigator.geolocation) {
@@ -39,7 +38,9 @@ new Promise((resolve,reject)=>{
     mapboxgl.accessToken = 'pk.eyJ1IjoidmxhZG9zcyIsImEiOiJja2lwbGk2dG0wNTcyMzFueWk2a2w5Y3pmIn0.TUY7Uh57rkJWDux_HdtaVQ';
 let map = new mapboxgl.Map({
 container: 'map',
-style: 'mapbox://styles/vladoss/ckipmxp6r44xt17m3gbp2vk6n'
+style: 'mapbox://styles/vladoss/ckipmxp6r44xt17m3gbp2vk6n',
+center: [userLongitude,userLatitude],
+zoom:18
 });
 map.on('load', function() {
      let el = document.createElement('div');
@@ -73,7 +74,7 @@ let positionIcon = new mapboxgl.Marker(el);
             "fill-opacity": 0.5
         }
     });
-    /*navigator.geolocation.watchPosition(updateLocation);
+    navigator.geolocation.watchPosition(updateLocation);
     function updateLocation(position){
         let {latitude,longitude} = position.coords;
         positionIcon.setLngLat([longitude,latitude]);
@@ -81,7 +82,7 @@ let positionIcon = new mapboxgl.Marker(el);
         map.flyTo({
 center: [longitude,latitude]
 });
-    }*/
+    }
 })
 })
 </script>
