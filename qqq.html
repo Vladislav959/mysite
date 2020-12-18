@@ -83,7 +83,7 @@ let positionIcon = new mapboxgl.Marker(el);
  positionIcon.addTo(map);
  let gameZoneOptions = {
      center: turf.point([userLongitude, userLatitude]),
-     radius: 2,
+     radius: 3,
      options:{
          steps:80,
          units:'meters'
@@ -120,9 +120,10 @@ center: [longitude,latitude]
 });
     userPoint = turf.point([longitude,latitude]);
     if(!turf.booleanPointInPolygon(userPoint,gameZone)){
-        if(document.getElementById('qwerty').style.display == 'none'){
             document.getElementById('qwerty').style.display = 'block';
-        }
+    }
+    else{
+        document.getElementById('qwerty').style.display = 'none';
     }
 }
 })
