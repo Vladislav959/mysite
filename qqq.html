@@ -83,7 +83,7 @@ let positionIcon = new mapboxgl.Marker(el);
  positionIcon.addTo(map);
  let gameZoneOptions = {
      center: turf.point([userLongitude, userLatitude]),
-     radius: 1,
+     radius: 25,
      options:{
          steps:80,
          units:'meters'
