@@ -51,8 +51,9 @@ let userLongitude, userLatitude;
 function getCoords(position) {
     userLatitude  = position.coords.latitude;
     userLongitude = position.coords.longitude;
-    if (userLatitude == null) {
-        navigator.permissions.query({name:'geolocation'}).then(function(result) {
+}
+function locationError(error){
+    navigator.permissions.query({name:'geolocation'}).then(function(result) {
     if (result.state == 'granted') {
     navigator.geolocation.getCurrentPosition(getCoords,locationError, gpsOptions);
     } else if (result.state == 'prompt') {
@@ -62,7 +63,6 @@ function getCoords(position) {
       alert('not granted!');
     }
   });
-    }
 }
 let gpsOptions = {
   enableHighAccuracy: true,
@@ -71,7 +71,7 @@ let gpsOptions = {
 };
 new Promise((resolve,reject)=>{
     if(navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(getCoords,null, gpsOptions);
+    navigator.geolocation.getCurrentPosition(getCoords,locationError, gpsOptions);
   }
   setTimeout(()=>{resolve(1)},500);
 }).then(result => {
@@ -95,7 +95,7 @@ let positionIcon = new mapboxgl.Marker(el);
  positionIcon.addTo(map);
  let gameZoneOptions = {
      center: turf.point([userLongitude, userLatitude]),
-     radius: 3,
+     radius: 25,
      options:{
          steps:80,
          units:'meters'
@@ -122,26 +122,13 @@ let userPoint = turf.point([userLongitude,userLatitude]);
     else{
         document.getElementById('qwerty').style.display = 'none';
     }
-    navigator.geolocation.watchPosition(updateLocation,null,gpsOptions);
+    navigator.geolocation.watchPosition(updateLocation,updateError,gpsOptions);
     function updateLocation(position){
         let {latitude,longitude} = position.coords;
-        if (userLatitude == null) {
-        navigator.permissions.query({name:'geolocation'}).then(function(result) {
-    if (result.state == 'granted') {
-    navigator.geolocation.watchPosition(updateLocation,null,gpsOptions);
-    } else if (result.state == 'prompt') {
-    navigator.geolocation.watchPosition(updateLocation,null,gpsOptions);
-    } else if (result.state == 'denied') {
-      
-      alert('not granted!');
-      return;
-    }
-  });
-    }
         positionIcon.setLngLat([longitude,latitude]);
         positionIcon.addTo(map);
         map.flyTo({
-center: [longitude,latitude]
+    center: [longitude,latitude]
 });
     userPoint = turf.point([longitude,latitude]);
     if(!turf.booleanPointInPolygon(userPoint,gameZone)){
@@ -150,6 +137,18 @@ center: [longitude,latitude]
     else{
         document.getElementById('qwerty').style.display = 'none';
     }
+}
+function updateError(){
+    navigator.permissions.query({name:'geolocation'}).then(function(result) {
+    if (result.state == 'granted') {
+    navigator.geolocation.watchPosition(updateLocation,updateError,gpsOptions);
+    } else if (result.state == 'prompt') {
+    navigator.geolocation.watchPosition(updateLocation,updateError,gpsOptions);
+    } else if (result.state == 'denied') {
+      
+      alert('not granted!');
+    }
+  });
 }
 })
 })
