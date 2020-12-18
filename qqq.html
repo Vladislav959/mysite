@@ -52,16 +52,17 @@ function getCoords(position) {
     userLatitude  = position.coords.latitude;
     userLongitude = position.coords.longitude;
 }
+function locationError(error){
+    alert(error)
+}
 let gpsOptions = {
   enableHighAccuracy: true,
   timeout: 1000,
-  maximumAge: 
+  maximumAge: 0
 };
 new Promise((resolve,reject)=>{
     if(navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(getCoords, function(error){
-alert(error)
-    }, gpsOptions);
+    navigator.geolocation.getCurrentPosition(getCoords,locationError, gpsOptions);
   }
   setTimeout(()=>{resolve(1)},500);
 }).then(result => {
