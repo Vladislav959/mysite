@@ -53,7 +53,7 @@ function getCoords(position) {
     userLongitude = position.coords.longitude;
 }
 function locationError(error){
-    alert(error)
+    alert(error.code)
 }
 let gpsOptions = {
   enableHighAccuracy: true,
