@@ -28,6 +28,7 @@ let userLongitude, userLatitude;
 function getCoords(position) {
     userLatitude  = position.coords.latitude;
     userLongitude = position.coords.longitude;
+    alert(userLatitude);
 }
 new Promise((resolve,reject)=>{
     if(navigator.geolocation) {
