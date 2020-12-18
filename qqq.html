@@ -55,11 +55,13 @@ function getCoords(position) {
 let gpsOptions = {
   enableHighAccuracy: true,
   timeout: 1000,
-  maximumAge: 0
+  maximumAge: 
 };
 new Promise((resolve,reject)=>{
     if(navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(getCoords, null, gpsOptions);
+    navigator.geolocation.getCurrentPosition(getCoords, function(error){
+alert(error)
+    }, gpsOptions);
   }
   setTimeout(()=>{resolve(1)},500);
 }).then(result => {
@@ -83,7 +85,7 @@ let positionIcon = new mapboxgl.Marker(el);
  positionIcon.addTo(map);
  let gameZoneOptions = {
      center: turf.point([userLongitude, userLatitude]),
-     radius: 25,
+     radius: 3,
      options:{
          steps:80,
          units:'meters'
