@@ -64,21 +64,24 @@ let positionIcon = new mapboxgl.Marker(el);
       steps: 80,
       units: 'meters'
     };
-
-    var circle = turf.circle(center, radius, options);
+let userPoint = turf.point([userLongitude,userLatitude]);
+    let gameZone = turf.circle(center, radius, options);
 
     map.addLayer({
         "id": "circle-fill",
         "type": "fill",
         "source": {
             "type": "geojson",
-            "data": circle
+            "data": gameZone
         },
         "paint": {
             "fill-color": "pink",
             "fill-opacity": 0.5
         }
     });
+    if(!turf.booleanPointInPolygon(userPoint,gameZone)){
+        alert('out of zone!');
+    }
     navigator.geolocation.watchPosition(updateLocation,null,gpsOptions);
     function updateLocation(position){
         let {latitude,longitude} = position.coords;
@@ -87,6 +90,10 @@ let positionIcon = new mapboxgl.Marker(el);
         map.flyTo({
 center: [longitude,latitude]
 });
+userPoint = turf.point([longitude,latitude]);
+if(!turf.booleanPointInPolygon(userPoint,gameZone)){
+        alert('out of zone!');
+    }
     }
 })
 })
