@@ -29,9 +29,14 @@ function getCoords(position) {
     userLatitude  = position.coords.latitude;
     userLongitude = position.coords.longitude;
 }
+let gpsOptions = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+};
 new Promise((resolve,reject)=>{
     if(navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(getCoords);
+    navigator.geolocation.getCurrentPosition(getCoords, null, gpsOptions);
   }
   setTimeout(()=>{resolve(1)},500);
 }).then(result => {
@@ -74,7 +79,7 @@ let positionIcon = new mapboxgl.Marker(el);
             "fill-opacity": 0.5
         }
     });
-    navigator.geolocation.watchPosition(updateLocation);
+    navigator.geolocation.watchPosition(updateLocation,null,gpsOptions);
     function updateLocation(position){
         let {latitude,longitude} = position.coords;
         positionIcon.setLngLat([longitude,latitude]);
