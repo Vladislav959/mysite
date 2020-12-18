@@ -51,9 +51,18 @@ let userLongitude, userLatitude;
 function getCoords(position) {
     userLatitude  = position.coords.latitude;
     userLongitude = position.coords.longitude;
-}
-function locationError(error){
-    alert(error.code)
+    if (userLatitude == null) {
+        navigator.permissions.query({name:'geolocation'}).then(function(result) {
+    if (result.state == 'granted') {
+    navigator.geolocation.getCurrentPosition(getCoords,locationError, gpsOptions);
+    } else if (result.state == 'prompt') {
+    navigator.geolocation.getCurrentPosition(getCoords,locationError, gpsOptions);
+    } else if (result.state == 'denied') {
+      
+      alert('not granted!');
+    }
+  });
+    }
 }
 let gpsOptions = {
   enableHighAccuracy: true,
@@ -62,7 +71,7 @@ let gpsOptions = {
 };
 new Promise((resolve,reject)=>{
     if(navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(getCoords,locationError, gpsOptions);
+    navigator.geolocation.getCurrentPosition(getCoords,null, gpsOptions);
   }
   setTimeout(()=>{resolve(1)},500);
 }).then(result => {
@@ -116,6 +125,19 @@ let userPoint = turf.point([userLongitude,userLatitude]);
     navigator.geolocation.watchPosition(updateLocation,null,gpsOptions);
     function updateLocation(position){
         let {latitude,longitude} = position.coords;
+        if (userLatitude == null) {
+        navigator.permissions.query({name:'geolocation'}).then(function(result) {
+    if (result.state == 'granted') {
+    navigator.geolocation.watchPosition(updateLocation,null,gpsOptions);
+    } else if (result.state == 'prompt') {
+    navigator.geolocation.watchPosition(updateLocation,null,gpsOptions);
+    } else if (result.state == 'denied') {
+      
+      alert('not granted!');
+      return;
+    }
+  });
+    }
         positionIcon.setLngLat([longitude,latitude]);
         positionIcon.addTo(map);
         map.flyTo({
