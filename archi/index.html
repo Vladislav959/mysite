@@ -158,7 +158,7 @@ align-items: center;
 		}
 		.item{
 			width:calc(20vw - 43px);
-			height:calc(20vw - 43px);
+			height:calc(13vw - 43px);
 			background-size: cover;
 			margin-right:25px;
 			position: relative;
@@ -326,7 +326,7 @@ color:white;
 		@media(max-width:1160px){
 			.item{
 				width:calc(25vw - 48px);
-				height:calc(25vw - 48px);
+				height:calc(18vw - 48px);
 			}
 			.itemlast{
 				display:block;
@@ -357,7 +357,7 @@ color:white;
 		@media(max-width:875px){
 			.item{
 				width:calc(33vw - 55px);
-				height:calc(33vw - 55px);
+				height:calc(26vw - 55px);
 			}
 			.itemlast{
 				display:none;
@@ -409,7 +409,7 @@ color:white;
 			}
 			.item{
 				width:calc(50vw - 45px);
-				height:calc(50vw - 45px);
+				height:calc(37vw - 45px);
 			}
 			.item:nth-child(even){
 				margin-right:0;
@@ -446,31 +446,40 @@ color:white;
 		
 		@media(max-width:450px){
 			.item{
-				width:calc(100vw - 100px);
-				height:calc(100vw - 100px);
-				margin-left:20px;
-				margin-right:20px;
-			}
-			header{
-				padding:20px 50px;
+				width:calc(100vw - 60px);
+				height:calc(74vw - 60px);
+				margin-left:0px;
+				border-radius: 20px;
+				margin-right:0px;
 			}
 			.menu__btn{
-				right:0;
+				right:15px;
+			}
+			header{
+				padding:20px 30px;
+				padding-right: 15px;
 			}
 			.itemlast{
 				display:none;
 			}
+.page{
+				display:block;
+				flex-wrap: nowrap;
+			}
+			
+			
+			
 			.item_content {
-    left: 4.1vw;
+       left: 5.1vw;
     right: 2.6vw;
-    bottom: 6.3vw;
+    bottom: 6.7vw;
 }
 			.item p{
-				font-size: 5.8vw;
-    top: 14px;
+				    font-size: 6.7vw;
+    top: 15px;
 }
 			.item span{
-				 font-size: 4vw;
+				font-size: 4.6vw;
     border-radius: 1.8vw;
     padding: 2vw 2.4vw;
 }
@@ -493,40 +502,7 @@ color:white;
 				float:right;
 			}
 		}
-		@media(max-width:385px){
-			.page{
-				display:block;
-				flex-wrap: nowrap;
-			}
-			.menu__btn{
-				right:15px;
-			}
-			header{
-				padding:20px 30px;
-				padding-right: 15px;
-			}
-			.item{
-				width:calc(100vw - 60px);
-				height:calc(100vw - 60px);
-				margin-right:0;
-				margin-left:0;
-			}
-			
-			.item_content {
-       left: 5.1vw;
-    right: 2.6vw;
-    bottom: 6.7vw;
-}
-			.item p{
-				    font-size: 6.7vw;
-    top: 15px;
-}
-			.item span{
-				font-size: 4.6vw;
-    border-radius: 1.8vw;
-    padding: 2vw 2.4vw;
-}
-		}
+		
 	</style>
 </head>
 <body style="overflow-y:scroll">
@@ -704,16 +680,7 @@ for (let i = 0; i < list.length; i++) {
 document.querySelector('input[type="submit"]').onclick = ()=>{
 	setTimeout(()=>{alert('Отправлено')},1000);
 }
-document.querySelector('#menu__toggle').onclick = function(){
-if(document.body.getAttribute('style') == 'overflow-y:scroll'){
-	document.body.setAttribute('style','overflow-y:hidden');
-	document.querySelector('.menu__btn').setAttribute('style','right:16.5px');
-}
-else{
-	document.body.setAttribute('style','overflow-y:scroll');
-	document.querySelector('.menu__btn').setAttribute('style','right:0');
-}
-}
+
 	</script>
 	<script src="wow.js"></script>
 	<script>
