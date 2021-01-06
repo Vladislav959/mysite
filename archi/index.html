@@ -4,10 +4,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Sushko Architects</title>
-<link rel="icon" type="image/png" href="icon.png">
+<link rel="icon" type="image/png" href="./icon.png">
 	 <link
     rel="stylesheet"
-    href="animate.css"
+    href="./animate.css"
   />
 	<style>
 		@font-face{
@@ -18,7 +18,9 @@
 			font-family:'Euclid';
 			src:url('./montserrat.ttf');
 		}
-		*{-webkit-appearance: none;
+		*{
+			-webkit-appearance: none;
+		
 			box-sizing:border-box;
 		}
 		:focus{
@@ -47,8 +49,7 @@
 			display:flex;
 align-items: center;
 			justify-content: space-between;
-			padding:20px 60px;
-			padding-right:40px;
+			padding:20px 15px;
 			position: relative;
 			width:100%;
 			z-index:20;
@@ -97,7 +98,7 @@ align-items: center;
     align-items: center;
     position: relative;
     top:-12px;
-    right: 17px;
+    right: 0px;
     width: 37px;
     height: 37px;
     cursor: pointer;
@@ -109,7 +110,7 @@ align-items: center;
   display: block;
     position: absolute;
     width: 100%;
-    height: 2.2px;
+    height: 2.4px;
     background-color: black;
     transition-duration: .25s;
 }
@@ -149,7 +150,7 @@ align-items: center;
     transition-duration: .25s;
 }
 		.page{
-			padding: 40px 60px;
+			padding: 40px 15px;
 			padding-right:0px;
 			display: flex;
 			flex-wrap: wrap;
@@ -157,19 +158,19 @@ align-items: center;
 			padding-top:0px;
 		}
 		.item{
-			width:calc(20vw - 43px);
-			height:calc(14.5vw - 43px);
+			width:calc(20vw - 19px);
+			height:calc(14.5vw - 19px);
 			background-size: cover;
-			margin-right:25px;
+			margin-right:15px;
 			background-position:center;
 			position: relative;
-			border-radius:12px;
-			margin-bottom: 25px;
+			/*border-radius:12px;*/
+			margin-bottom: 15px;
 		}
 		
 		.item_content{
 			position: absolute;
-			bottom: 1.4vw;
+			bottom: 1.6vw;
 			right:1.2vw;
 			user-select:none;
 			left:1.2vw;
@@ -181,16 +182,16 @@ align-items: center;
 
 		.item p{
 			top:15.5px;
-			font-size:1.35vw;
+			font-size:1.45vw;
 position:relative;
 color:white;
 		}
 		.item span{
-			font-size: 0.85vw;
+			font-size: 0.95vw;
 			cursor:pointer;
-			border-radius:0.5vw;
+			/*border-radius:0.5vw;*/
 			background:rgba(255,255,255,0.8);
-			padding: 0.35vw 0.6vw;
+			padding: 0.4vw 0.65vw;
 			
 		}
 		.itemlast{
@@ -203,7 +204,7 @@ color:white;
 			z-index:30;
 			background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgb(0 0 0 / 58%) 80%);
 			transition: opacity .35s;
-			border-radius:10px;
+			/*border-radius:10px;*/
 			width:100%;
 			height:70%;
 			opacity:0;
@@ -280,7 +281,7 @@ color:white;
 			border:2.5px solid black;
 			font-size:1.2em;
 			font-family:'Euclid';
-    		border-radius: 8px;
+    		/*border-radius: 8px;*/
 			margin-bottom:10px;
 		}
 		.sendpage form input[type="text"], .sendpage form textarea{
@@ -288,7 +289,7 @@ color:white;
 			background:transparent;
 		}
 		.sendpage form input[type="text"]:focus, .sendpage form textarea:focus, .sendpage form input[type="submit"]:focus{
-			box-shadow:0 0 0 3.5px rgb(0 0 0 / 11%);
+			box-shadow:0 0 0 3.5px rgb(0 0 0 / 16%);
 		}
 		.sendpage form input[type="submit"]{
 			width: fit-content;
@@ -326,8 +327,8 @@ color:white;
 		}
 		@media(max-width:1160px){
 			.item{
-				width:calc(25vw - 48px);
-				height:calc(18vw - 48px);
+				width:calc(25vw - 18.75px);
+				height:calc(18vw - 18.75px);
 			}
 			.itemlast{
 				display:block;
@@ -335,15 +336,15 @@ color:white;
 			.item_content{
 				left:1.4vw;
 				right:1.4vw;
-				bottom:1.65vw;
+				bottom:1.75vw;
 			}
 			.item p{
 				font-size:1.65vw;
-				top:14.5px;
+				top:16.5px;
 			}
 			.item span{
 				font-size:1.1vw;
-				border-radius:0.6vw;
+				/*border-radius:0.6vw;*/
 			}
 		}
 		@media(max-width:935px){
@@ -358,8 +359,8 @@ color:white;
 		}
 		@media(max-width:875px){
 			.item{
-				width:calc(33vw - 55px);
-				height:calc(26vw - 55px);
+				width:calc(33vw - 18px);
+				height:calc(24vw - 18px);
 			}
 			.itemlast{
 				display:none;
@@ -375,7 +376,7 @@ color:white;
 			}
 			.item span{
 				font-size:1.45vw;
-				border-radius:0.8vw;
+				/*border-radius:0.8vw;*/
 				padding:0.7vw 1vw;
 			}
 		}
@@ -401,17 +402,16 @@ color:white;
 
 		@media(max-width:685px){
 			.page{
-				padding:40px 30px;
+				padding:40px 15px;
 				padding-right:0;
 				padding-top:0;
 			}
 			header{
-				padding:20px 30px;
-				padding-right:20px;
+				padding:20px 15px;
 			}
 			.item{
-				width:calc(50vw - 45px);
-				height:calc(37vw - 45px);
+				width: calc(50vw - 22.5px);
+    height: calc(37vw - 22.5px);
 			}
 			.item:nth-child(even){
 				margin-right:0;
@@ -422,15 +422,15 @@ color:white;
 			.item_content{
 				left: 2.6vw;
     right: 2.6vw;
-    bottom: 2.9vw;
+    bottom: 3.5vw;
 }
 			.item p{
 				font-size: 3.1vw;
-    top: 15.3px;
+    top: 16.5px;
 			}
 			.item span{
 				    font-size: 2vw;
-    border-radius: 1vw;
+    /*border-radius: 1vw;*/
     padding: 0.8vw 1.2vw;
 }
 .hamburger-menu{
@@ -448,17 +448,16 @@ color:white;
 		
 		@media(max-width:450px){
 			.item{
-				width:calc(100vw - 60px);
-				height:calc(74vw - 60px);
+				width:calc(100vw - 30px);
+				height:calc(74vw - 30px);
 				margin-left:0px;
 				margin-right:0px;
 			}
 			.menu__btn{
-				right:15px;
+				right:0px;
 			}
 			header{
-				padding:20px 30px;
-				padding-right: 15px;
+				padding:20px 15px;
 			}
 			.itemlast{
 				display:none;
@@ -471,18 +470,18 @@ color:white;
 			
 			
 			.item_content {
-       left: 5.1vw;
-    right: 2.6vw;
-    bottom: 6.7vw;
+				left: 4.3vw;
+    right: 2vw;
+    bottom: 5.95vw;
 }
 			.item p{
-				    font-size: 6.7vw;
+				    font-size: 5.2vw;
     top: 15px;
 }
 			.item span{
-				font-size: 4.6vw;
-    border-radius: 1.8vw;
-    padding: 2vw 2.4vw;
+				font-size: 3.2vw;
+    /*border-radius: 1.8vw;*/
+    padding: 1.6vw 2vw;
 }
 		}
 		@media(max-width:440px){
@@ -503,7 +502,11 @@ color:white;
 				float:right;
 			}
 		}
-		
+		@media(max-width:390px){
+			.ap_text h1{
+				font-size:1.6em;
+			}
+		}
 	</style>
 </head>
 <body style="overflow-y:scroll">
@@ -683,7 +686,7 @@ document.querySelector('input[type="submit"]').onclick = ()=>{
 }
 
 	</script>
-	<script src="wow.js"></script>
+	<script src="./wow.js"></script>
 	<script>
      new WOW().init();
     </script>
